@@ -46,6 +46,7 @@ Tidak hanya itu, jika ada beberapa project Django dengan versi Python maupun Dja
    ```python
    {% for ... %}
    <!-- tampilkan data -->
+   {{ data yang ingin di tampilkan }}
    {% endfor %}
    ```
 
