@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <h1>Assignment 3</h1>
+
+  <table>
+    <tr>
+        <th>Title</th>
+        <th>Watched</th>
+        <th>Release Date</th>
+        <th>Rating</th>
+      <th>Review</th>
+    </tr>
+    {% for movie in mywatchlist %}
+    <!-- edit stylingnya -->
+    <tr>
+      <th>{{ movie.title }}</th>
+      <th>{{ movie.watched }}</th>
+      <th>{{ movie.release_date }}</th>
+      <th>{{ movie.rating }}</th>
+      <th>{{ movie.review }}</th>
+    </tr>
+      {% endfor %}
+  </table>
+
+ {% endblock content %}

@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":1,
+        "fields":{
+            "watched": true,
+            "title": "500 Days of Summer",
+            "rating": 4,
+            "release_date": "2009-07-17",
+            "review": "With its very catchy storyline, this movie is one of the best movies in the 'Romance' genre. With lots of highs and lows, the movie is unpredictable and interesting right till the end. Joseph Levitt who plays Tom  Hansen falls in love with a girl named Summer(Zooey Deschanel) who doesn't quite believe in love and relationships. But being one-sided love relationship it doesn't work out for them. The climax of the story is when Tom finds out that the girl like Summer who doesn't even believes in the idea of relationships got married to some other guy which really got him thinking and decides to start over a new life and perceive his passion for Architecture."
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":2,
+        "fields":{
+            "watched": true,
+            "title": "Mencuri Raden Saleh",
+            "rating": 4,
+            "release_date": "2022-08-25",
+            "review": "Mencuri Raden Saleh? I was, 'Hah? What kind of movie is this?' The title didn't attract me, lol, and I didn't expect this movie to be this good, like AT ALL. I watched it because of the hype on social media a.k.a Instagram and Twitter and some friends recommended it to me bcs this movie is different, they said. Turned out the movie, the plots, are full of unexpected things and I love that! I recommend this movie to anyone who loves to watch movie that makes you guess and think. 8.6/10 for me. Far above my expectation! Well done! Would love to see more movies like this one! Big appreciate to the producer, crews, and of course the great actors!"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":3,
+        "fields":{
+            "watched": false,
+            "title": "Emergency Declaration",
+            "rating": 3,
+            "release_date": "2022-08-16",
+            "review": "An extremely unsurprising, unreal, cliche plot. Fortunately, awesome acting from the villain and some main characters elevate the film. Can't love more the acting from the villain."
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":4,
+        "fields":{
+            "watched": false,
+            "title": "Snowpiercer",
+            "rating": 4,
+            "release_date": "2013-08-01",
+            "review": "I enjoyed the movie, but I can only say that everything about it is just 'alright'. The concept is interesting, the characters have personality despite some of them having minimal screen time, the camera work is pretty, the CGI is good enough, and the only aspect I found somewhat lacking was sound design. It's clearly very artistic and there are some scenes with a great focus on it, but I couldn't help but find it just ever so slightly awkward. There is however one single moment (involving a slap in case you wanna know which one I'm talking about) which used sound in a very organic and pleasing way."
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":5,
+        "fields":{
+            "watched": false,
+            "title": "Orphan: First Kill",
+            "rating": 2,
+            "release_date": "2022-08-31",
+            "review": "I went in not expecting much and wasn't disappointed. Here we have a prequel that may of worked better had it been made much closer to the original movie. \nThere are aspects of the story that are just ridiculous. Lines that have been written that don't sound like they should. Characters doing things that seem not at all like something they would do. Plot holes scattered throughout. It doesn't completely suck but honestly it's not very good either. "
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":6,
+        "fields":{
+            "watched": true,
+            "title": "Arrival",
+            "rating": 4,
+            "release_date": "2017-01-04",
+            "review": "Let's just say that the topic of 'extraterrestrial life' has finally been touched by some intelligent director. The sheer intelligence and thought-provoking concepts all beautifully portrayed sets this movie way on the top. I don't think any person would have felt bored while watching this movie. From start to end, it will hold your attention, you'll stop munching on that popcorn kernel, and start rationalizing; something we have stopped doing amidst our heavy usage of technology. "
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":7,
+        "fields":{
+            "watched": false,
+            "title": "Creed II",
+            "rating": 3,
+            "release_date": "2018-11-28",
+            "review": "Creed was a pleasant addition to the Rocky lore and allowed a new audience to enjoy the series. Creed II falls into some of the early Stallone faults and over embellish on sentimental heart strings. The boxing scenes are again top notch and the return of some of the earlier characters was a nice idea. This feels like the end of Rocky's journey and it would be nice to leave him out of the series for a film or two. The pacing is sluggish this time around and I felt the director change was noticeable. There's some cringe worthy moments and that final fight wasn't the epic we deserved. The series is left in a good place and there's a chance they could resurrect some other Rocky characters from the vault in the future. I was never a huge fan of Rocky IV but this resurrects those characters successfully. I wasn't sold on this film and sadly it pulls the quality down overall. This is still a solid boxing film, just a little unmemorable."
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":8,
+        "fields":{
+            "watched": true,
+            "title": "Thor: Ragnarok",
+            "rating": 5,
+            "release_date": "2017-10-25",
+            "review": "Perfectly acceptable as an action movie but inspired as a comedy--which is probably where the Thor franchise should have been aiming from the start."
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":9,
+        "fields":{
+            "watched": true,
+            "title": "Ready Player One",
+            "rating": 3,
+            "release_date": "2018-03-28",
+            "review": "Overall, this movie was amazing, it had everything that you need to make an epic movie. There was a great plot, top notch CGI, drama, brilliant writing, so much for us to learn about the gaming world, plenty of Easter eggs for fans, some really awesome soundtracks by Alan Silvestri who is on a roll now after composing the soundtrack for Infinity war. There's very little not to like here and I am just not able to think of any negatives. Maybe one of the negatives is that it relies heavily on nostalgia and pop culture references, maybe some people won't be able to enjoy this as much as others and it also relies on the audience's focus, if you lose track of one scene, you might not get the next scene, other than that nothing much to complain. I cant wait to watch it again for multiple reasons. This will go down as one of the movies with the best CGI. 2018 is turning out to be great for action lovers, Infinity war, Mission Impossible Fallout, Ready Player One, the list just keeps getting better. I already love Spielberg but the way he managed to keep up with the modern era of gamers and movie fans is just another thing we love about him now, truly a legend"
+        }
+    },
+    {
+        "model": "mywatchlist.WatchList",
+        "pk":10,
+        "fields":{
+            "watched": false,
+            "title": "Pirates of the Caribbean: At World's End",
+            "rating": 2,
+            "release_date": "2007-05-23",
+            "review": "The threequel in the Pirates franchise pits Jack Sparrow, Barbossa and the rest of the worlds’ pirates against Lord Beckett, Davy Jones, the British Empire and the East India Trading Company in a final showdown. Once again Johnny Depp, Geoffrey Rush, Bill Nighy deliver outstanding performances. Tom Hollander as Cutler Beckett also deserves props, as does Keira Knightley who was allowed to shine more in this film. The final action sequence, while long, does provide excellent action and a very satisfying ending for all the characters. The special effects were well done and hold up to age well.  I appreciate the world building that takes place in this film, but it does add length to the movie that might not have been necessary. This film is a fun summer blockbuster that I think is worth your time."
+        }
+    }
+]
