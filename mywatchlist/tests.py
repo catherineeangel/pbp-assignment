@@ -1,12 +1,8 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from mywatchlist.models import WatchList
 
 # Create your tests here.
 class WatchlistTestCase(TestCase):
-
-    # def setUp(self):
-    #     self.client = Client()
 
     def test_home_page_status_code(self):
         response = self.client.get('/')
