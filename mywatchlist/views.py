@@ -5,11 +5,21 @@ from mywatchlist.models import WatchList
 # Create your views here.
 
 data_mywatchlist = WatchList.objects.all()
-context = {
-    'mywatchlist' : data_mywatchlist
-}
+
+def show_banyak_nonton(request):
+    total_movies = data_mywatchlist.count()
+    total_watched = WatchList.objects.filter(watched=True).count()
+    context = {
+         'banyak_nonton': total_watched>total_movies
+    }
+    return render(request, 'message.html', context)
 
 def show_mywatchlist(request):
+    
+    context = {
+        'mywatchlist' : data_mywatchlist,
+       
+    }
     return render(request, 'mywatchlist.html', context)
 
 # make xml and json format

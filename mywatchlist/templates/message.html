@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <h1>Assignment 3</h1>
+  <h3>Apakah kamu sudah banyak nonton?</h3>
+  {% if banyak_nonton == True %}
+    <h4> Selamat, kamu sudah banyak menonton!</h4>
+  {% else %}
+    <h4>Wah, kamu masih sedikit menonton!</h4>
+  {% endif %}
+
+
+  <button><a href="html">Lihat watchlist kamu!</a></button>
+ {% endblock content %}
