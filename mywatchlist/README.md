@@ -1,11 +1,3 @@
-<!-- Membuat sebuah README.md yang berisi tautan menuju aplikasi Heroku yang sudah kamu deploy serta jawaban dari beberapa pertanyaan berikut:
- Jelaskan perbedaan antara JSON, XML, dan HTML!
- Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
- Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
- Mengakses tiga URL di poin 6 menggunakan Postman, menangkap screenshot, dan menambahkannya ke dalam README.md
- Menambahkan unit test pada tests.py untuk menguji bahwa tiga URL di poin 6 dapat mengembalikan respon HTTP 200 OK
- -->
-
 # Assignment 3
 
 ### Website Link: [ruby-pbp.herokuapp.com](https://ruby-pbp.herokuapp.com/)
@@ -88,7 +80,18 @@ django-admin create-app mywatchlist
 
 Lalu, tambahkan app 'mywatchlist' pada list INSTALLED_APPS di settings.py.
 
-2. Buat model WatchList pada file models.py.
+2. Buat model WatchList sesuai dengan data field yang sudah ditentukan pada file models.py. Isi dari model WatchList adalah sebagai berikut:
+
+```
+class WatchList(models.Model):
+   watched = models.BooleanField()
+   title = models.CharField(max_length=255)
+   rating = models.IntegerField(
+      validators=[MinValueValidator(1), MaxValueValidator(5)]
+   )
+   release_date = models.DateField()
+   review = models.TextField()
+```
 
 3. Buka views.py yang ada pada folder wishlist dan buatlah 3 fungsi yang menerima parameter request.  
    a. Fungsi show_mywatchlist untuk menampilkan data dengan format HTML.  
@@ -101,6 +104,8 @@ Lalu, tambahkan app 'mywatchlist' pada list INSTALLED_APPS di settings.py.
    c. 'json/'
 
 5. Jalankan proyek Django-mu dengan perintah python manage.py runserver dan bukalah http://localhost:8000/mywatchlist/{html/xml.json}/ (sesuaikan dengan path url yang dibuat) di browser untuk melihat hasilnya.
+
+6. [BONUS] Tambahkan fungsi show_banyak_nonton yang menerima parameter request pada views.py pada folder mywatchlist. Fungsi ini akan mengembalikan apakah film yang ditonton user lebih banyak atau tidak daripada yang belum di tonton. Hasilnya akan di tampilkan pada template 'message.html'. Pesan yang ditampilkan akan disesuaikan jika user sudah banyak menonton atau tidak.
 
 ## Postman
 
