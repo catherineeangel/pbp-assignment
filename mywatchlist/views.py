@@ -10,7 +10,7 @@ def show_banyak_nonton(request):
     total_movies = data_mywatchlist.count()
     total_watched = WatchList.objects.filter(watched=True).count()
     context = {
-         'banyak_nonton': total_watched>total_movies
+         'banyak_nonton': total_watched>=total_movies
     }
     return render(request, 'message.html', context)
 
