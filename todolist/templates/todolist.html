@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+ <h1>Hello, {{ username }}</h1>
+
+ <table>
+    <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Created at</th>
+        <th>Done</th>
+    </tr>
+    
+
+
+    {% for task in todolist  %}
+    <tr>
+
+        <th>{{ task.title }}</th>
+        <th>{{ task.description }}</th>
+        <th>{{ task.date }}</th>
+
+        
+    </tr>
+    {% endfor %}
+    
+
+    {% if todolist.count == 0 %}
+    <p>Kamu belum memiliki task!</p>
+    {% endif %}   
+    
+</table>
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+
+ <button><a href="{% url 'todolist:create_task' %}">Create task</a> </button>
+ <button><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
+
+ {% endblock content %}

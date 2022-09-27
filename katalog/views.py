@@ -3,9 +3,9 @@ from katalog.models import CatalogItem
 
 # TODO: Create your views here.
 
-data_barang_wishlist = CatalogItem.objects.all()
+data_barang_katalog = CatalogItem.objects.all()
 context = {
-    'list_katalog': data_barang_wishlist,
+    'list_katalog': data_barang_katalog,
     'name': 'Catherine',
     'student_id': '2106705392'
 }
