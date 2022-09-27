@@ -30,26 +30,10 @@
 
         
     <p>
-        Belum mempunyai akun? <button><a href="{% url 'todolist:register' %}">Buat Akun</a></button>
+        Belum mempunyai akun? <button class="secondary-button"><a href="{% url 'todolist:register' %}">Buat Akun</a></button>
     </p> 
 
 </div>
-<!-- <div class="container-form">
-    <div class="title-form">LOGIN</div>
-    <form method="post" action="">
-        {% csrf_token %}
-        <div class="inputs">
-            <label>USERNAME</label>
-            <input type="text" />
-            <label>PASSWORD</label>
-            <input type="password" />
-            <button type="submit">LOGIN</button>
-        </div>
-    </form>
-    <p>Belum mempunyai akun? <button class="secondary-button"><a href="{% url 'todolist:register' %}">Buat Akun</a></button>
-    </p>
-  </div> -->
-
 
  
  {% endblock content %}

@@ -1,7 +1,7 @@
 body {
     background-color: #FCF6FF;
     font-family: 'Lucida Console', monospace;
-    padding: 50px 40px 0;
+    padding: 50px 40px;
     display: flex; 
     flex-direction: column;
     align-items: center; 
@@ -46,10 +46,19 @@ body {
 .login .input-title {
     padding-bottom: 4px;
 }
-.container-form {
+
+.register-container{
+  width: 600px;
+}
+
+.container-form{
+  width: 350px;
+  height: 420px;
+}
+
+.container-form, .register-container{
     position: relative;
-    width: 350px;
-    height: 420px;
+  
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
@@ -93,7 +102,7 @@ body {
     color: gray;
   }
   
-  input:not([type='checkbox']) {
+  input:not([type='checkbox']){
     background: #ecf0f3;
     padding: 10px;
     padding-left: 20px;
@@ -102,6 +111,17 @@ body {
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   }
+
+  textarea {
+    margin: 10px 0;
+    background: #ecf0f3;
+    padding: 16px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  }
+ 
   
   button {
     color: white;
@@ -121,7 +141,7 @@ body {
 
 .secondary-button {
     margin-top: 20px;
-    background: #8b8595;
+    background: #63537f;
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
@@ -129,6 +149,8 @@ body {
     box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
     transition: 0.5s;
 }
+
+
 
   a {
     text-decoration: none;

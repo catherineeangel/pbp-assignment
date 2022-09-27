@@ -31,7 +31,7 @@
                 <td>{{ task.date }}</td>
                 <td>
                     {% if task.is_finished %}
-                    Done
+                    Closed
                     {% else %}
                     Open
                     {% endif %}
@@ -58,7 +58,7 @@
     <div class="button-container"> 
         
         <button><a href="{% url 'todolist:create_task' %}">Create task</a> </button>
-        <button><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
+        <button class="secondary-button"><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
         
     </div>
 {% endblock content %}
