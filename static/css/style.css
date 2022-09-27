@@ -1,0 +1,139 @@
+body {
+    background-color: #FCF6FF;
+    font-family: 'Lucida Console', monospace;
+    padding: 50px 40px 0;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    
+}
+.button-container {
+    display: flex;
+    row-gap: 20px;
+    width: 300px;
+    height: 100px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #BC6DE3;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.login h1{
+    color: #5b2d72;
+}
+.login tr {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.login .input-title {
+    padding-bottom: 4px;
+}
+.container-form {
+    position: relative;
+    width: 350px;
+    height: 420px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  }
+  
+  
+  .title-form {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #723590;
+    letter-spacing: 1px;
+  }
+  
+  .inputs {
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  
+  label, input:not([type='checkbox']), button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  label:nth-of-type(2) {
+    margin-top: 12px;
+  }
+  
+  input::placeholder {
+    color: gray;
+  }
+  
+  input:not([type='checkbox']) {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  }
+  
+  button {
+    color: white;
+    margin: 20px 10px 0;
+    background: #8f66dd;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+  }
+  
+  button:hover {
+    box-shadow: none;
+  }
+
+.secondary-button {
+    margin-top: 20px;
+    background: #8b8595;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+  a {
+    text-decoration: none;
+    color: white;
+}
+
+
+

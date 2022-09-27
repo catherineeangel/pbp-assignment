@@ -29,3 +29,4 @@ def show_mywatchlist_xml(request):
 
 def show_mywatchlist_json(request):
     return HttpResponse(serializers.serialize("json", data_mywatchlist), content_type="application/json")
+
