@@ -14,7 +14,7 @@
              <tr>
                  <th>Task</th>
                  <th>Description</th>
-                 <th>Created at</th>
+                 <th style="width: 100px;">Created at</th>
                  <th>Status</th>
                 <th>Check</th>
                 <th>Delete</th>
@@ -36,7 +36,7 @@
                     Open
                     {% endif %}
                 </td>
-                <td>
+                <td style="text-align: center;">
                     <input 
                     type="checkbox" 
                     name="checkbox"      
@@ -45,7 +45,7 @@
                      onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
                 </td>
                 
-                <td><a href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:black " class="fa">&#xf014;</i></a></td>
+                <td style="text-align: center;"><a href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:black " class="fa">&#xf014;</i></a></td>
             </tr>
             {% endfor %}
             
