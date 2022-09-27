@@ -57,8 +57,8 @@
         </table>
     <div class="button-container"> 
         
-        <button><a href="{% url 'todolist:create_task' %}">Create task</a> </button>
-        <button class="secondary-button"><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
+        <button onclick="location.href=`{% url 'todolist:create_task' %}`" >Create task </button>
+        <button class="secondary-button" onclick="location.href=`{% url 'todolist:logout_user' %}`">Logout</button>
         
     </div>
 {% endblock content %}
