@@ -61,20 +61,20 @@ class CreateTaskForm(forms.ModelForm):
         fields = ('title', 'description')
 ```
 
-4. Buat views.py yang berisi fungsi-fungsi yang dibutuhkan, antara lain :
+4. Buat views.py yang berisi fungsi-fungsi yang dibutuhkan, antara lain :  
    a. login_user  
    Mengambil username dan password yang telah diinput oleh user melalui request.POST.get(name) lalu mengecek apakah user tersebut ada dalam database. 'name' disesuaikan dengan name yang diberikan untuk tag input pada forms.
-   User akan di-redirect ke page /todolist yang menampilkan semua todolist user.
+   User akan di-redirect ke page /todolist yang menampilkan semua todolist user.  
    b. logout_user  
-   Logout user dan me-redirect ke page /login. Dalam fungsi ini, cookies untuk user juga dihapus.
+   Logout user dan me-redirect ke page /login. Dalam fungsi ini, cookies untuk user juga dihapus.  
    c. register  
    Mendafatarkan user baru ke database dengan menggunakan UserCreationForms.
    d. show_todolist  
-   Mengambil semua todolist sesuai dengan user yang login dan menampilkannya. Tambahkan decorator login_required untuk memastikan user telah login.
+   Mengambil semua todolist sesuai dengan user yang login dan menampilkannya. Tambahkan decorator login_required untuk memastikan user telah login.  
    e. toggle_is_finished  
-   Berfungsi untuk mengubah status task dari Open menjadi Closed atau sebaliknya. Fungsi ini dipanggil jika checklist berubah.
+   Berfungsi untuk mengubah status task dari Open menjadi Closed atau sebaliknya. Fungsi ini dipanggil jika checklist berubah.  
    f. create_task
-   Membuat task baru dengan menggunakan form CreateTaskForm yang dibuat di forms.py.
+   Membuat task baru dengan menggunakan form CreateTaskForm yang dibuat di forms.py.  
    g. delete_task  
    Menghapus task berdasarkan id.
 
