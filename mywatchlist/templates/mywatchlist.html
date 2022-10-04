@@ -2,30 +2,36 @@
 
  {% block content %}
 
-  <h1>Assignment 3</h1>
-  <h3>Kamu sudah banyak nonton?</h3>
-  <h3>
-    {{ banyak_nonton }}
-  </h3>
 
-  <table>
-    <tr>
-        <th>Title</th>
-        <th>Watched</th>
-        <th>Release Date</th>
-        <th>Rating</th>
-      <th>Review</th>
-    </tr>
 
-    {% for movie in mywatchlist %}
-    <tr>
-      <th>{{ movie.title }}</th>
-      <th>{{ movie.watched }}</th>
-      <th>{{ movie.release_date }}</th>
-      <th>{{ movie.rating }}</th>
-      <th>{{ movie.review }}</th>
-    </tr>
+   <h1>Assignment 3</h1>
+   <h3>Kamu sudah banyak nonton?</h3>
+   <h3>
+     {{ banyak_nonton }}
+    </h3>
+    
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Watched</th>
+          <th>Release Date</th>
+          <th>Rating</th>
+          <th>Review</th>
+        </tr>
+      </thead>
+      
+      {% for movie in mywatchlist %}
+      <tr>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.watched }}</td>
+        <td>{{ movie.release_date }}</td>
+        <td>{{ movie.rating }}</td>
+        <td>{{ movie.review }}</th>
+      </tr>
       {% endfor %}
-  </table>
+    </table>
+    
 
- {% endblock content %}
+    {% endblock content %}
+    

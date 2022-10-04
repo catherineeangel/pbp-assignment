@@ -1,6 +1,6 @@
 body {
     background-color: #FCF6FF;
-    font-family: 'Lucida Console', monospace;
+    font-family: "Trebuchet MS", sans-serif;
     padding: 50px 40px;
     display: flex; 
     flex-direction: column;
@@ -20,12 +20,13 @@ body {
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
-    max-width: 600px;
+    /* min-width: 200px;
+    width: 600px; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.styled-table thead tr {
+
+.styled-table thead tr{
     background-color: #BC6DE3;
     color: #ffffff;
     text-align: left;
@@ -125,6 +126,7 @@ body {
  
   
   button {
+    width: 200px;
     color: white;
     margin: 20px 10px 0;
     background: #8f66dd;
@@ -141,7 +143,7 @@ body {
   }
 
 .secondary-button {
-    margin-top: 20px;
+    color:white;
     background: #63537f;
     height: 40px;
     border-radius: 20px;

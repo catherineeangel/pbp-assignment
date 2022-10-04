@@ -10,23 +10,26 @@
   <h5>Student ID: </h5>
   <p>{{ student_id }}</p>
 
-  <table>
-    <tr>
-      <th>Item Name</th>
-      <th>Item Price</th>
-      <th>Item Stock</th>
-      <th>Rating</th>
-      <th>Description</th>
-      <th>Item Url</th>
-    </tr>
+  <table class="styled-table">
+    <thead>
+
+      <tr>
+        <th>Item Name</th>
+        <th>Item Price</th>
+        <th>Item Stock</th>
+        <th>Rating</th>
+        <th>Description</th>
+        <th>Item Url</th>
+      </tr>
+    </thead>
     {% for katalog in list_katalog %}
     <tr>
-      <th>{{ katalog.item_name }}</th>
-      <th>{{ katalog.item_price }}</th>
-      <th>{{ katalog.item_stock }}</th>
-      <th>{{ katalog.rating }}</th>
-      <th>{{ katalog.description }}</th>
-      <th>{{ katalog.item_url }}</th>
+      <td>{{ katalog.item_name }}</td>
+      <td>{{ katalog.item_price }}</td>
+      <td>{{ katalog.item_stock }}</td>
+      <td>{{ katalog.rating }}</td>
+      <td>{{ katalog.description }}</td>
+      <td>{{ katalog.item_url }}</td>
     </tr>
       {% endfor %}
     {% comment %} Add the data below this line {% endcomment %}

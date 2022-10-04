@@ -15,10 +15,8 @@ def show_banyak_nonton(request):
     return render(request, 'message.html', context)
 
 def show_mywatchlist(request):
-    
     context = {
         'mywatchlist' : data_mywatchlist,
-       
     }
     return render(request, 'mywatchlist.html', context)
 

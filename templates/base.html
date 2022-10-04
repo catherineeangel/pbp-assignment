@@ -1,4 +1,5 @@
 {% load static %}
+{% load tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +7,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% tailwind_css %}
   {% block meta %}
   {% endblock meta %}
 </head>
 
-<body>
+<body class="bg-neutral-200">
   {% block content %}
   {% endblock content %}
 </body>

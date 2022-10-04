@@ -7,24 +7,61 @@
 
  {% block content %} 
 
-     <h1>Hello, {{ username }}</h1>
+     <p class="text-3xl font-bold">Hello, <span class="text-violet-900">{{ username }}</span></p>
      
-     <table class="styled-table">
-         <thead> 
+
+         <!-- <thead> 
              <tr>
                  <th>Task</th>
                  <th>Description</th>
-                 <th style="width: 100px;">Created at</th>
+                 <th style="max-width: 100px;">Created at</th>
                  <th>Status</th>
                 <th>Check</th>
                 <th>Delete</th>
             </tr>
-        </thead>
+        </thead> -->
             
             
-            
-            {% for task in todolist  %}
-            <tr>
+            <div class="flex flex-wrap gap-5 text-xl my-5 justify-center">
+
+                {% for task in todolist  %}
+                <div class="w-[320px] flex flex-col justify-center p-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl text-white">
+
+                    <p>Task: <span class="font-bold text-violet-900">{{ task.title }}</span></p>
+                    <p>Description: <span class="font-bold text-violet-900">{{ task.description }}</span></p>
+                    <p>Created at: <span class="font-bold text-violet-900">{{ task.date }}</span> </p>
+                    <p class="flex flex-row justify-between items-center">Status: 
+                        {% if task.is_finished %}
+                        <span class="font-bold text-rose-800">
+                        Closed
+                    </span>
+                        {% else %}
+                        <span class="font-bold text-teal-300">
+                            Open
+                        </span>
+                        {% endif %}
+                        <input 
+                        type="checkbox" 
+                        name="checkbox"      
+                        id='{{task.id}}' 
+                        {% if task.is_finished %} checked {% endif %}
+                        onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
+                    </p>
+
+
+                    <!-- <p style="text-align: center;">
+                        <input 
+                        type="checkbox" 
+                        name="checkbox"      
+                        id='{{task.id}}' 
+                        {% if task.is_finished %} checked {% endif %}
+                        onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
+                    </p>
+                    
+                    <p style="text-align: center;"><a href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:black " class="fa">&#xf014;</i></a></p> -->
+                </div>
+        
+            <!-- <tr>
                 
                 <td>{{ task.title }}</td>
                 <td>{{ task.description }}</td>
@@ -46,16 +83,17 @@
                 </td>
                 
                 <td style="text-align: center;"><a href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:black " class="fa">&#xf014;</i></a></td>
-            </tr>
+            </tr> -->
             {% endfor %}
+        </div>
             
             
             {% if todolist.count == 0 %}
             <p>Kamu belum memiliki task!</p>
             {% endif %}   
             
-        </table>
-    <div class="button-container"> 
+
+    <div class="flex flex-col md:flex-row gap-x-10 gap-y-8 my-10"> 
         
         <button onclick="location.href=`{% url 'todolist:create_task' %}`" >Create task </button>
         <button class="secondary-button" onclick="location.href=`{% url 'todolist:logout_user' %}`">Logout</button>

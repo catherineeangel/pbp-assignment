@@ -12,7 +12,7 @@
 
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
+        <table class="">
             <tr>
                 <td class="input-title">Username </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
@@ -24,13 +24,13 @@
             </tr>
             
         </table>
-        <button class="button-full" type="submit" >Login</button>
+        <button class="button-full mx-auto my-4" type="submit" >Login</button>
         
     </form>
 
         
     <p>
-        Belum mempunyai akun? <button class="secondary-button" onclick="location.href=`{% url 'todolist:register' %}`">Buat Akun</button>
+        Belum mempunyai akun? <button class="secondary-button mx-auto my-4" onclick="location.href=`{% url 'todolist:register' %}`">Buat Akun</button>
     </p> 
 
 </div>
