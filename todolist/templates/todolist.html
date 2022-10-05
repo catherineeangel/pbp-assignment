@@ -22,31 +22,45 @@
         </thead> -->
             
             
-            <div class="flex flex-wrap gap-5 text-xl my-5 justify-center">
+            <div class="flex flex-wrap gap-6 text-xl my-5 justify-center">
 
                 {% for task in todolist  %}
-                <div class="w-[320px] flex flex-col justify-center p-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl text-white">
+                    {% if task.is_finished %}
+                        <div class="w-[320px] shadow-lg shadow-slate-500/50 transition-all flex flex-col justify-between p-10 bg-gradient-to-br from-slate-700 to-slate-900 opacity-70 rounded-3xl text-black">
+                    {% else %}
 
-                    <p>Task: <span class="font-bold text-violet-900">{{ task.title }}</span></p>
-                    <p>Description: <span class="font-bold text-violet-900">{{ task.description }}</span></p>
-                    <p>Created at: <span class="font-bold text-violet-900">{{ task.date }}</span> </p>
-                    <p class="flex flex-row justify-between items-center">Status: 
-                        {% if task.is_finished %}
-                        <span class="font-bold text-rose-800">
-                        Closed
-                    </span>
+                        <div class="w-[320px] shadow-lg shadow-pink-500/50 shadow-md transition-all hover:scale-105 flex flex-col justify-between p-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl text-black">
+                    {% endif %}
+
+                    <p>Task: <span class="font-bold text-white">{{ task.title }}</span></p>
+                    <p>Description: <span class="font-bold text-white">{{ task.description }}</span></p>
+                    <p>Created at: <span class="font-bold text-white">{{ task.date }}</span> </p>
+                    <div class="flex flex-row justify-between items-center">
+                        <p >
+                            Status: 
+                            {% if task.is_finished %}
+                            <span class="font-bold text-fuchsia-100">
+                                Closed
+                            </span>
+
                         {% else %}
-                        <span class="font-bold text-teal-300">
-                            Open
-                        </span>
-                        {% endif %}
+
+                            <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg">
+
+                                Open
+                            </span>
+                            {% endif %}
+                        </p>
                         <input 
+                        class="accent-emerald-500/25"
                         type="checkbox" 
                         name="checkbox"      
                         id='{{task.id}}' 
                         {% if task.is_finished %} checked {% endif %}
                         onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
-                    </p>
+                        
+                    </div>
+                    <a class="flex justify-end pt-5 " href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:whitesmoke " class="fa">&#xf014;</i></a>
 
 
                     <!-- <p style="text-align: center;">
