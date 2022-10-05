@@ -6,8 +6,12 @@ body {
     flex-direction: column;
     align-items: center; 
     justify-content: center;
+    height: 100%;
     
 }
+
+
+
 .button-container {
     display: flex;
     row-gap: 20px;
@@ -49,18 +53,17 @@ body {
     padding-bottom: 4px;
 }
 
-.register-container{
+/* .register-container{
   width: 600px;
-}
+} */
 
 .container-form{
-  width: 350px;
-  height: 420px;
+  position: relative;
 }
 
 .container-form, .register-container{
-    position: relative;
-  
+ 
+    /* width: auto; */
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
@@ -105,6 +108,7 @@ body {
   }
   
   input:not([type='checkbox']){
+    margin-bottom:10px;
     background: #ecf0f3;
     padding: 10px;
     padding-left: 20px;
@@ -125,7 +129,7 @@ body {
   }
  
   
-  button {
+  .primary-button {
     width: 200px;
     color: white;
     margin: 20px 10px 0;

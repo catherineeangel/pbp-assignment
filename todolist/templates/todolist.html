@@ -109,7 +109,7 @@
 
     <div class="flex flex-col md:flex-row gap-x-10 gap-y-8 my-10"> 
         
-        <button onclick="location.href=`{% url 'todolist:create_task' %}`" >Create task </button>
+        <button class="primary-button bg-[#8f66dd] text-white" onclick="location.href=`{% url 'todolist:create_task' %}`" >Create task </button>
         <button class="secondary-button" onclick="location.href=`{% url 'todolist:logout_user' %}`">Logout</button>
         
     </div>

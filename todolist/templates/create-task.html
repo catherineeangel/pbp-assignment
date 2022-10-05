@@ -3,20 +3,20 @@
  {% block content %}
 
 
- <div class="create_task">
-    <h2>Create new task</h2>
+ <div class="create_task h-full flex justify-center items-center flex-col">
+    <p  class="text-xl font-bold text-center my-5">Create new task</p  class="text-xl font-bold">
 
-    <form method="POST" >  
-        {% csrf_token %}  
-        <table>  
-            {{ form.as_table }}  
-            <tr>  
-                <td></td> 
-                <!-- <td><input type="submit" name="submit" value="Create"/></td>   -->
-            </tr>  
-        </table>  
-        <button type="submit" name="submit" >Create</button>
-    </form>
+        <form method="POST" class="" >  
+            <div class="w-screen ">
+                {% csrf_token %}  
+                <div class="w-full px-5 h-[150px] overflow-x-scroll flex md:justify-center">
+                <table  class="">  
+                    {{ form.as_table }}          
+                </table>  
+                </div>
+            </div>
+                <button class="primary-button bg-[#8f66dd] text-white mx-auto my-5" type="submit" name="submit" >Create</button>
+            </form>
 
  </div>
 

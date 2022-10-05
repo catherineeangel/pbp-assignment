@@ -7,24 +7,30 @@
 
  {% block content %}
  
- <div class = "register-container">
-    
-    <h1 class="title-form">Formulir Registrasi</h1>  
+ <div class="w-full flex justify-center">
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                </tr>  
-            </table>  
-            <button class="button-full mx-auto" type="submit" >Daftar</button>
-        </form>
+     <div class = "register-container overflow-x-scroll w-[600px]  flex flex-col justify-center ">
+         <h1 class="title-form text-center">Formulir Registrasi</h1>  
+         
+         
+         <!-- <div class="w-[500px] h-full ">
+             <div class="h-full overflow-x-scroll  "> -->
+                 <form method="POST" >
 
+                         {% csrf_token %} 
+                         <!-- <div class="min-w-[600px] px-5  "> -->
+                             <table>  
+                                 {{ form.as_table }}  
+                                </table>  
+                            <!-- </div>  -->
 
-</div>  
-
-
- 
- {% endblock content %}
+                        <button class="primary-button bg-[#8f66dd] text-white  mx-auto " type="submit" >Daftar</button>
+                    </form>
+                    
+                    
+                </div>  
+                
+                
+                
+            </div>
+                {% endblock content %}
