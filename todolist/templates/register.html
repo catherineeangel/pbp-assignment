@@ -9,7 +9,7 @@
  
  <div class="w-full flex justify-center">
 
-     <div class = "register-container overflow-x-scroll w-[600px]  flex flex-col justify-center ">
+     <div class = "register-container  flex flex-col justify-center ">
          <h1 class="title-form text-center">Formulir Registrasi</h1>  
          
          
@@ -18,18 +18,14 @@
                  <form method="POST" >
 
                          {% csrf_token %} 
-                         <!-- <div class="min-w-[600px] px-5  "> -->
-                             <table>  
-                                 {{ form.as_table }}  
-                                </table>  
-                            <!-- </div>  -->
 
-                        <button class="primary-button bg-[#8f66dd] text-white  mx-auto " type="submit" >Daftar</button>
+                            {{ form.as_div }}      
+
+                        <button class="primary-button bg-[#8f66dd] text-white mx-auto mt-4 " type="submit" >Daftar</button>
                     </form>
                     
                     
                 </div>  
-                
                 
                 
             </div>
