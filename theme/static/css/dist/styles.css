@@ -920,6 +920,14 @@ select {
   width: 500px;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
+.w-\[90px\] {
+  width: 90px;
+}
+
 .min-w-\[320px\] {
   min-width: 320px;
 }
@@ -1367,6 +1375,10 @@ select {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-\[400px\] {
+    width: 400px;
   }
 
   .md\:flex-row {
