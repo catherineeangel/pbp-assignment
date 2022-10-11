@@ -209,7 +209,7 @@
     $.ajax({
       type :"DELETE",
       csrfmiddlewaretoken: "{{ csrf_token }}",
-      url :"{% url 'todolist:delete_task' id %}",
+      url :`/todolist/delete/${id}`,
       success: function () {
         $(`#${id}`).remove()
       },
