@@ -946,6 +946,10 @@ select {
   width: 600px;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
