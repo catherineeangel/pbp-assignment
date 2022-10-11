@@ -63,7 +63,7 @@
             <div class="p-3">
               <div class="flex flex-col md:flex-row justify-center gap-x-10 gap-y-8 my-10">
                 <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold">
-                  Add New Task!
+                  Create Task
                 </button>
                 <button class="secondary-button"><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
               </div> 
@@ -81,12 +81,12 @@
                 <!-- body -->
                 <div class="w-full p-3">
                   <div class="bg-slate-100 h-full p-10 flex flex-col">
-                    <div class=" bg-slate-500 p-6 flex justify-center items-center">
-                        <h1 class="font-bold  text-black">Create Todo List</h1>
+                    <div class="p-6 flex justify-center items-center">
+                        <h1 class="font-bold text-violet-900">Create Todo List</h1>
                     </div>
                     
                     <div class="flex justify-center m-20">
-                        <div class=" bg-slate-900 bg-opacity-40 rounded-3xl w-fit p-8 ">  
+                        <div class=" bg-[#8d61a5] bg-opacity-40 rounded-3xl w-fit p-8 ">  
                             <form method="POST" action="" id="tembak_db">
                                 {% csrf_token %}
                                 <div class="">
