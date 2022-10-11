@@ -6,99 +6,53 @@
 {% endblock meta %}
 
  {% block content %} 
+ 
+ <div class="">
+    <p class="text-3xl font-bold">Hello, <span class="text-violet-900">{{ username }}</span></p>
 
-     <p class="text-3xl font-bold">Hello, <span class="text-violet-900">{{ username }}</span></p>
-     
+      <div class="relative z-10 flex flex-wrap gap-6 text-xl my-5 justify-center">
 
-         <!-- <thead> 
-             <tr>
-                 <th>Task</th>
-                 <th>Description</th>
-                 <th style="max-width: 100px;">Created at</th>
-                 <th>Status</th>
-                <th>Check</th>
-                <th>Delete</th>
-            </tr>
-        </thead> -->
-            
-            
-            <div class="flex flex-wrap gap-6 text-xl my-5 justify-center">
+          {% for task in todolist  %}
+              {% if task.is_finished %}
+                  <div class="w-[320px] shadow-lg shadow-slate-500/50 transition-all flex flex-col justify-between p-10 bg-gradient-to-br from-slate-700 to-slate-900 opacity-70 rounded-3xl text-black">
+              {% else %}
 
-                {% for task in todolist  %}
-                    {% if task.is_finished %}
-                        <div class="w-[320px] shadow-lg shadow-slate-500/50 transition-all flex flex-col justify-between p-10 bg-gradient-to-br from-slate-700 to-slate-900 opacity-70 rounded-3xl text-black">
-                    {% else %}
+                  <div class="w-[320px] shadow-lg shadow-pink-500/50 shadow-md transition-all hover:scale-105 flex flex-col justify-between p-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl text-black">
+              {% endif %}
 
-                        <div class="w-[320px] shadow-lg shadow-pink-500/50 shadow-md transition-all hover:scale-105 flex flex-col justify-between p-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl text-black">
-                    {% endif %}
+              <p>Task: <span class="font-bold text-white">{{ task.title }}</span></p>
+              <p>Description: <span class="font-bold text-white">{{ task.description }}</span></p>
+              <p>Created at: <span class="font-bold text-white">{{ task.date }}</span> </p>
+              <div class="flex flex-row justify-between items-center">
+                  <p >
+                      Status: 
+                      {% if task.is_finished %}
+                      <span class="font-bold text-fuchsia-100">
+                          Closed
+                      </span>
 
-                    <p>Task: <span class="font-bold text-white">{{ task.title }}</span></p>
-                    <p>Description: <span class="font-bold text-white">{{ task.description }}</span></p>
-                    <p>Created at: <span class="font-bold text-white">{{ task.date }}</span> </p>
-                    <div class="flex flex-row justify-between items-center">
-                        <p >
-                            Status: 
-                            {% if task.is_finished %}
-                            <span class="font-bold text-fuchsia-100">
-                                Closed
-                            </span>
+                  {% else %}
 
-                        {% else %}
+                      <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg">
 
-                            <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg">
+                          Open
+                      </span>
+                      {% endif %}
+                  </p>
+                  <input 
+                  class="accent-emerald-500/25"
+                  type="checkbox" 
+                  name="checkbox"      
+                  id='{{task.id}}' 
+                  {% if task.is_finished %} checked {% endif %}
+                  onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
+                  
+              </div>
+              <a class="flex justify-end pt-5 " href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:whitesmoke " class="fa">&#xf014;</i></a>
+          </div>
+  
 
-                                Open
-                            </span>
-                            {% endif %}
-                        </p>
-                        <input 
-                        class="accent-emerald-500/25"
-                        type="checkbox" 
-                        name="checkbox"      
-                        id='{{task.id}}' 
-                        {% if task.is_finished %} checked {% endif %}
-                        onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
-                        
-                    </div>
-                    <a class="flex justify-end pt-5 " href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:whitesmoke " class="fa">&#xf014;</i></a>
-
-
-                    <!-- <p style="text-align: center;">
-                        <input 
-                        type="checkbox" 
-                        name="checkbox"      
-                        id='{{task.id}}' 
-                        {% if task.is_finished %} checked {% endif %}
-                        onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
-                    </p>
-                    
-                    <p style="text-align: center;"><a href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:black " class="fa">&#xf014;</i></a></p> -->
-                </div>
-        
-            <!-- <tr>
-                
-                <td>{{ task.title }}</td>
-                <td>{{ task.description }}</td>
-                <td>{{ task.date }}</td>
-                <td>
-                    {% if task.is_finished %}
-                    Closed
-                    {% else %}
-                    Open
-                    {% endif %}
-                </td>
-                <td style="text-align: center;">
-                    <input 
-                    type="checkbox" 
-                    name="checkbox"      
-                    id='{{task.id}}' 
-                     {% if task.is_finished %} checked {% endif %}
-                     onchange="location.href=`{% url 'todolist:toggle_is_finished' task.id %}`"   />
-                </td>
-                
-                <td style="text-align: center;"><a href="{% url 'todolist:delete_task' task.id %}"><i style="font-size:24px;color:black " class="fa">&#xf014;</i></a></td>
-            </tr> -->
-            {% endfor %}
+          {% endfor %} 
         </div>
             
             
@@ -106,11 +60,124 @@
             <p>Kamu belum memiliki task!</p>
             {% endif %}   
             
+            <div class="p-3">
+              <div class="flex flex-col md:flex-row justify-center gap-x-10 gap-y-8 my-10">
+                <button onclick="openModal(true)" class="bg-[#8f66dd] text-white font-bold focus:outline-none">
+                  Add New Task!
+                </button>
+                <button class="secondary-button"><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
+              </div> 
+            </div>
+            <!-- overlay -->
+            <div id="modal_overlay" class="hidden absolute inset-0 bg-rose-900 bg-opacity-30 h-full w-screen flex justify-center items-center pt-10 md:pt-0">
+              <!-- modal -->
+              <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-fit bg-white w-10/12 rounded shadow-lg transition-opacity transition-transform duration-300">
+                <!-- button close -->
+                <span 
+                onclick="openModal(false)"
+                  class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white">
+                  &cross;
+              </span>
+                <!-- body -->
+                <div class="w-full p-3">
+                  <div class="bg-slate-100 h-full p-10 flex flex-col">
+                    <div class=" bg-slate-500 p-6 flex justify-center items-center">
+                        <h1 class="font-bold  text-black">Create Todo List</h1>
+                    </div>
+                    
+                    <div class="flex justify-center m-20">
+                        <div class=" bg-slate-900 bg-opacity-40 rounded-3xl w-fit p-8 ">  
+                            <form method="POST" action="" id="tembak_db">
+                                {% csrf_token %}
+                                <div class="">
+                                    <table>
+                                        <tr>
+                                            <td>Todo:</td>
+                                            <td><input class="rounded-2xl" type="text" name="todo" placeholder="What's New?" class="form-control" id="nama"></td>
+                                        </tr>
+                                                
+                                        <tr>
+                                            <div class="flex gap-4">
+                                                <td>Description: </td>
+                                                <td><input class="rounded-2xl" type="text" name="description" placeholder="Description" class="form-control" id="desc"></td>
+                                            </div>
+                
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <div class="flex gap-4 mt-4 justify-center">
+                                    <div class="p-3 rounded-2xl w-fit cursor-pointer bg-orange-400 flex items-center">
+                                        <button class=" primary-button bg-[#8f66dd] text-white" type="submit" name="submit" >Create</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+           
 
-    <div class="flex flex-col md:flex-row gap-x-10 gap-y-8 my-10"> 
-        
-        <button class="primary-button bg-[#8f66dd] text-white" onclick="location.href=`{% url 'todolist:create_task' %}`" >Create task </button>
-        <button class="secondary-button" onclick="location.href=`{% url 'todolist:logout_user' %}`">Logout</button>
-        
+        <!-- <div class="relative z-10 flex flex-col md:flex-row justify-center gap-x-10 gap-y-8 my-10"> 
+            
+            <button class="primary-button bg-[#8f66dd] text-white" onclick="location.href=`{% url 'todolist:create_task' %}`" >Create task </button>
+            <button class="secondary-button" onclick="location.href=`{% url 'todolist:logout_user' %}`">Logout</button>
+            
+        </div> -->
     </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script>
+     const modal_overlay = document.querySelector('#modal_overlay');
+  const modal = document.querySelector('#modal');
+  const nama = document.getElementById('nama');
+  const desc = document.getElementById('desc');
+
+  
+  function openModal (value){
+    const modalCl = modal.classList
+    const overlayCl = modal_overlay
+    if(value){
+      overlayCl.classList.remove('hidden')
+      setTimeout(() => {
+        modalCl.remove('opacity-0')
+        modalCl.remove('-translate-y-full')
+        modalCl.remove('scale-150')
+        nama.value = '';
+        desc.value = '';
+      }, 100);
+    } else {
+      modalCl.add('-translate-y-full')
+      setTimeout(() => {
+        modalCl.add('opacity-0')
+        modalCl.add('scale-150')
+      }, 100);
+      setTimeout(() => overlayCl.classList.add('hidden'), 300);
+    }
+  } 
+    // $(document).ready(function () {
+    // getTodolist();
+    //  })
+
+    function getTodolist(){
+      $.ajax({
+        url: "{% url 'todolist:show_todolist_json' %}",
+        type: "GET",
+        dataType: "json",
+        success: function(resp){
+
+        } ,
+        error: function(resp){
+            console.log('Error?');
+        }
+    })}
+
+    
+ </script>
 {% endblock content %}

@@ -2,7 +2,7 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.core import serializers
-from django.shortcuts import render, redirect
+from django.shortcuts import HttpResponse, render, redirect
 from todolist.models import Task
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -23,6 +23,12 @@ def show_todolist(request):
         'last_login': request.COOKIES['last_login']
     }
     return render(request, 'todolist.html', context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_json(request):
+    currentUser = request.user
+    data_todolist = Task.objects.filter(user=currentUser)
+    return HttpResponse(serializers.serialize("json", data_todolist), content_type="application/json")
 
 def register(request):
     form = UserCreationForm(request.POST) # ini apa bro

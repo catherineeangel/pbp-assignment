@@ -6,7 +6,10 @@
 {% endblock meta %}
 
  {% block content %}
- <div class = "container-form w-auto" >
+ <div class="w-full h-screen flex justify-center items-center">
+
+
+ <div class = "w-auto p-5 rounded-xl bg-white" >
 
     <h1 class="title-form">Login</h1>
 
@@ -24,7 +27,7 @@
             </tr>
             
         </table>
-        <button class="primary-button bg-[#8f66dd] text-white button-full mx-auto my-4" type="submit" >Login</button>
+        <button class="p-5 rounded-lg bg-[#8f66dd] text-white mx-auto my-4" type="submit" >Login</button>
         
     </form>
 
@@ -33,6 +36,7 @@
         Belum mempunyai akun? <button class="secondary-button mx-auto my-4" onclick="location.href=`{% url 'todolist:register' %}`">Buat Akun</button>
     </p> 
 
+</div>
 </div>
 
  
