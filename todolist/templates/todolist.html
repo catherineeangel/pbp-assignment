@@ -62,7 +62,7 @@
             
             <div class="p-3">
               <div class="flex flex-col md:flex-row justify-center gap-x-10 gap-y-8 my-10">
-                <button onclick="openModal(true)" class="bg-[#8f66dd] text-white font-bold focus:outline-none">
+                <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold">
                   Add New Task!
                 </button>
                 <button class="secondary-button"><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
@@ -75,8 +75,8 @@
                 <!-- button close -->
                 <span 
                 onclick="openModal(false)"
-                  class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white">
-                  &cross;
+                  class="absolute top-0 right-0 text-2xl w-10 h-10 text-black">
+                    X
               </span>
                 <!-- body -->
                 <div class="w-full p-3">
@@ -93,13 +93,13 @@
                                     <table>
                                         <tr>
                                             <td>Todo:</td>
-                                            <td><input class="rounded-2xl" type="text" name="todo" placeholder="What's New?" class="form-control" id="nama"></td>
+                                            <td><input  type="text" name="title" placeholder="Task Name" class="form-control" id="nama"></td>
                                         </tr>
                                                 
                                         <tr>
                                             <div class="flex gap-4">
                                                 <td>Description: </td>
-                                                <td><input class="rounded-2xl" type="text" name="description" placeholder="Description" class="form-control" id="desc"></td>
+                                                <td><input type="text" name="description" placeholder="Description" class="form-control" id="desc"></td>
                                             </div>
                 
                                         </tr>
@@ -107,9 +107,7 @@
                                 </div>
                                 
                                 <div class="flex gap-4 mt-4 justify-center">
-                                    <div class="p-3 rounded-2xl w-fit cursor-pointer bg-orange-400 flex items-center">
                                         <button class=" primary-button bg-[#8f66dd] text-white" type="submit" name="submit" >Create</button>
-                                    </div>
                                 </div>
                             </form>
                         </div>
