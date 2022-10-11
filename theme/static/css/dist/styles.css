@@ -904,6 +904,10 @@ select {
   height: 700px;
 }
 
+.h-\[300px\] {
+  height: 300px;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -1103,6 +1107,10 @@ select {
 .bg-\[\#8d61a5\] {
   --tw-bg-opacity: 1;
   background-color: rgb(141 97 165 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-opacity-30 {

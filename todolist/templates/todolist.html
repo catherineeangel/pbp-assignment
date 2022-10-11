@@ -30,11 +30,8 @@
                       <span class="font-bold text-fuchsia-100">
                           Closed
                       </span>
-
                   {% else %}
-
                       <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg">
-
                           Open
                       </span>
                       {% endif %}
@@ -60,18 +57,18 @@
             <p>Kamu belum memiliki task!</p>
             {% endif %}   
             
-            <div class="p-3">
+
               <div class="flex flex-col md:flex-row justify-center md:gap-x-10 gap-y-8 md:gap-y-0 my-10">
                 <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold">
                   Create Task
                 </button>
                 <button class="secondary-button"><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
               </div> 
-            </div>
+
             <!-- overlay -->
             <div id="modal_overlay" class="hidden absolute inset-0 bg-blur-lg bg-opacity-30 h-full w-screen flex justify-center items-center pt-10 md:pt-0">
               <!-- modal -->
-              <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-[400px] bg-white w-[400px] rounded shadow-lg transition-opacity transition-transform duration-300">
+              <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-[300px] bg-transparent w-[400px] rounded shadow-lg transition-opacity transition-transform duration-300">
                 <!-- button close -->
                 <span 
                 onclick="openModal(false)"
@@ -85,8 +82,14 @@
                         <h1 class="font-bold text-violet-900 text-2xl">Create Todo List</h1>
                     </div> -->
                     
-                    <div class="flex justify-center ">
-                        <div class="bg-[#8d61a5] bg-opacity-40 rounded-3xl w-fit p-8 ">  
+                    <div  class="flex justify-center relative">
+                   
+                        <div class="bg-[#8d61a5] bg-opacity-40  rounded-3xl w-fit p-8 "> 
+                          <span 
+                          onclick="openModal(false)"
+                            class="absolute top-0 right-0 text-2xl w-10 h-10 text-black">
+                              X
+                        </span> 
                           <h1 class="font-bold text-violet-900 text-2xl text-center">Create Todo List</h1>
                             <form method="POST" action="" id="tembak_db">
                                 {% csrf_token %}
