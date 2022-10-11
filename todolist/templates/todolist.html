@@ -61,7 +61,7 @@
             {% endif %}   
             
             <div class="p-3">
-              <div class="flex flex-col md:flex-row justify-center gap-x-10 gap-y-8 my-10">
+              <div class="flex flex-col md:flex-row justify-center md:gap-x-10 gap-y-8 md:gap-y-0 my-10">
                 <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold">
                   Create Task
                 </button>
@@ -69,9 +69,9 @@
               </div> 
             </div>
             <!-- overlay -->
-            <div id="modal_overlay" class="hidden absolute inset-0 bg-rose-900 bg-opacity-30 h-full w-screen flex justify-center items-center pt-10 md:pt-0">
+            <div id="modal_overlay" class="hidden absolute inset-0 bg-blur-lg bg-opacity-30 h-full w-screen flex justify-center items-center pt-10 md:pt-0">
               <!-- modal -->
-              <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-fit bg-white w-10/12 rounded shadow-lg transition-opacity transition-transform duration-300">
+              <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-[700px] bg-white w-[600px] rounded shadow-lg transition-opacity transition-transform duration-300">
                 <!-- button close -->
                 <span 
                 onclick="openModal(false)"
@@ -79,14 +79,14 @@
                     X
               </span>
                 <!-- body -->
-                <div class="w-full p-3">
-                  <div class="bg-slate-100 h-full p-10 flex flex-col">
+                <!-- <div class="w-[800px] p-3"> -->
+                  <div class="bg-white h-full p-10 flex flex-col rounded-xl">
                     <div class="p-6 flex justify-center items-center">
                         <h1 class="font-bold text-violet-900">Create Todo List</h1>
                     </div>
                     
                     <div class="flex justify-center m-20">
-                        <div class=" bg-[#8d61a5] bg-opacity-40 rounded-3xl w-fit p-8 ">  
+                        <div class="bg-[#8d61a5] bg-opacity-40 rounded-3xl w-fit p-8 ">  
                             <form method="POST" action="" id="tembak_db">
                                 {% csrf_token %}
                                 <div class="">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                </div>
+                <!-- </div> -->
               </div>
             </div>
           </div>
@@ -139,22 +139,22 @@
 
   
   function openModal (value){
-    const modalCl = modal.classList
+    const modalClass = modal.classList
     const overlayCl = modal_overlay
     if(value){
       overlayCl.classList.remove('hidden')
       setTimeout(() => {
-        modalCl.remove('opacity-0')
-        modalCl.remove('-translate-y-full')
-        modalCl.remove('scale-150')
+        modalClass.remove('opacity-0')
+        modalClass.remove('-translate-y-full')
+        modalClass.remove('scale-150')
         nama.value = '';
         desc.value = '';
       }, 100);
     } else {
-      modalCl.add('-translate-y-full')
+      modalClass.add('-translate-y-full')
       setTimeout(() => {
-        modalCl.add('opacity-0')
-        modalCl.add('scale-150')
+        modalClass.add('opacity-0')
+        modalClass.add('scale-150')
       }, 100);
       setTimeout(() => overlayCl.classList.add('hidden'), 300);
     }

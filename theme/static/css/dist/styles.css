@@ -892,6 +892,18 @@ select {
   height: 2.5rem;
 }
 
+.h-\[400px\] {
+  height: 400px;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -924,6 +936,14 @@ select {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-\[800px\] {
+  width: 800px;
+}
+
+.w-\[600px\] {
+  width: 600px;
 }
 
 .border-collapse {
@@ -1308,6 +1328,15 @@ select {
 
   .md\:justify-center {
     justify-content: center;
+  }
+
+  .md\:gap-y-0 {
+    row-gap: 0px;
+  }
+
+  .md\:gap-x-10 {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
   }
 
   .md\:pt-0 {
