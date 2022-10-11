@@ -10,8 +10,12 @@
  <div class="">
     <p class="text-3xl font-bold">Hello, <span class="text-violet-900">{{ username }}</span></p>
 
-      <div class="relative z-10 flex flex-wrap gap-6 text-xl my-5 justify-center">
 
+      <div id="container-cards" class="flex flex-wrap gap-6 text-xl my-5 justify-center">
+        <div id="task-card">
+
+        </div>
+<!-- 
           {% for task in todolist  %}
               {% if task.is_finished %}
                   <div class="w-[320px] shadow-lg shadow-slate-500/50 transition-all flex flex-col justify-between p-10 bg-gradient-to-br from-slate-700 to-slate-900 opacity-70 rounded-3xl text-black">
@@ -23,7 +27,7 @@
               <p>Task: <span class="font-bold text-white">{{ task.title }}</span></p>
               <p>Description: <span class="font-bold text-white">{{ task.description }}</span></p>
               <p>Created at: <span class="font-bold text-white">{{ task.date }}</span> </p>
-              <div class="flex flex-row justify-between items-center">
+              <div  class="flex flex-row justify-between items-center">
                   <p >
                       Status: 
                       {% if task.is_finished %}
@@ -49,9 +53,9 @@
           </div>
   
 
-          {% endfor %} 
         </div>
-            
+          {% endfor %}  -->
+        </div>
             
             {% if todolist.count == 0 %}
             <p>Kamu belum memiliki task!</p>
@@ -59,14 +63,14 @@
             
 
               <div class="flex flex-col md:flex-row justify-center md:gap-x-10 gap-y-8 md:gap-y-0 my-10">
-                <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold w-44">
+                <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold w-[200px]">
                   Create Task
                 </button>
                 <button class="secondary-button"><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
               </div> 
 
             <!-- overlay -->
-            <div id="modal_overlay" class="hidden absolute inset-0 bg-blur-lg bg-slate-700 h-full w-screen flex justify-center items-center pt-10 md:pt-0">
+            <div id="modal_overlay" class="hidden absolute inset-0 bg-blur-lg bg-slate-700/50 h-full w-screen flex justify-center items-center pt-10 md:pt-0">
               <!-- modal -->
               <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-[300px] bg-[#8d61a5] rounded-3xl w-[400px] rounded shadow-lg transition-opacity transition-transform duration-300">
                 <!-- button close -->
@@ -76,11 +80,7 @@
                     X
               </span>
                 <!-- body -->
-                <!-- <div class="w-[800px] p-3"> -->
-                  <!-- <div class="bg-white h-full p-10 flex flex-col rounded-xl"> -->
-                    <!-- <div class="p-6 flex justify-center items-center">
-                        <h1 class="font-bold text-violet-900 text-2xl">Create Todo List</h1>
-                    </div> -->
+            
                     
                     <div  class="flex justify-center relative">
                    
@@ -91,19 +91,19 @@
                               X
                         </span> 
                           <h1 class="font-bold text-violet-900 text-2xl text-center">Create Todo List</h1>
-                            <form method="POST" action="" id="tembak_db">
+                            <form method="POST" action="" id="form-add-task">
                                 {% csrf_token %}
                                 <div class="">
                                     <table>
                                         <tr>
                                             <td>Todo:</td>
-                                            <td><input  type="text" name="title" placeholder="Task Name" class="form-control" id="nama"></td>
+                                            <td><input  type="text" name="title" placeholder="Task Name" class="form-control" id="title"></td>
                                         </tr>
                                                 
                                         <tr>
                                             <div class="flex gap-4">
                                                 <td>Description: </td>
-                                                <td><input type="text" name="description" placeholder="Description" class="form-control" id="desc"></td>
+                                                <td><input type="text" name="description" placeholder="Description" class="form-control" id="description"></td>
                                             </div>
                 
                                         </tr>
@@ -116,11 +116,8 @@
                             </form>
                         </div>
                     </div>
-                <!-- </div> -->
-                <!-- </div> -->
               </div>
             </div>
-          </div>
         </div>
             
            
@@ -131,8 +128,7 @@
             <button class="secondary-button" onclick="location.href=`{% url 'todolist:logout_user' %}`">Logout</button>
             
         </div> -->
-    </div>
-</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  <script>
@@ -163,23 +159,80 @@
       setTimeout(() => overlayCl.classList.add('hidden'), 300);
     }
   } 
-    // $(document).ready(function () {
-    // getTodolist();
-    //  })
+    $(document).ready(function () {
+    getTodolist();
+     })
 
     function getTodolist(){
+      let temp= "";
       $.ajax({
         url: "{% url 'todolist:show_todolist_json' %}",
         type: "GET",
         dataType: "json",
-        success: function(resp){
+        success: function(data){
+          for (let task of data){
+            console.log(task.pk)
+            let is_finished_style = task.fields.is_finished ? "shadow-slate-500/50 bg-gradient-to-br from-slate-700 to-slate-900 opacity-70 ": "shadow-pink-500/50 hover:scale-105 bg-gradient-to-br from-purple-500 to-pink-500";
+            let is_finished_text = task.fields.is_finished ? "Closed":"Open";
+            temp += ` <div id="${task.pk}" class="w-[320px] shadow-lg transition-all flex flex-col justify-between p-10 text-black rounded-3xl ${is_finished_style}">
+              <p>Task: <span class="font-bold text-white">${task.fields.title}</span></p>
+              <p>Description: <span class="font-bold text-white">${task.fields.description}</span></p>
+              <p>Created at: <span class="font-bold text-white">${task.fields.date}</span> </p>
+                <div class="flex flex-row justify-between items-center">
+                  <p>
+                      Status: <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg"> ${is_finished_text}</span>
+                  </p>  
+                  <input 
+                  class="accent-emerald-500/25"
+                  type="checkbox" 
+                  name="checkbox"      
+                  id='${task.pk}' 
+                  ${task.fields.is_finished ?  checked:''} 
+                  />
 
+                </div>  
+                </div>
+                   <a onclick="delele_todolist(${task.pk})" class="flex justify-end pt-5 cursor-pointer" id="delete-icon"><i style="font-size:24px;color:whitesmoke" class="fa">&#xf014;</i></a>
+                </div>
+              </div>`
+                  
+
+          }
+          $('#container-cards').html(temp);
         } ,
-        error: function(resp){
-            console.log('Error?');
+        error: function(data){
+            console.log('Error Detected');
         }
     })}
 
-    
+    function delele_todolist(id){
+    $.ajax({
+      type :"DELETE",
+      csrfmiddlewaretoken: "{{ csrf_token }}",
+      url :"{% url 'todolist:delete_task' id %}",
+      success: function () {
+        $(`#${id}`).remove()
+      },
+    })
+  }
+
+  $(document).on("submit", "#form-add-task", function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "{% url 'todolist:create_task_ajax' %}",
+      data: {
+        title: $("#title").val(),
+        description: $("#description").val(),
+        csrfmiddlewaretoken: "{{ csrf_token }}",
+      },
+      dataType: "json",
+      success: function () {
+        openModal(false)
+        loadData();
+      },
+    });
+  });
+
  </script>
 {% endblock content %}

@@ -1,4 +1,5 @@
 import datetime
+import re
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.core import serializers
@@ -9,6 +10,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from todolist.forms import CreateTaskForm
+from django.views.decorators.csrf import csrf_exempt
+from django.http.response import JsonResponse
 
 # Create your views here.
 
@@ -60,6 +63,18 @@ def create_task(request):
     context = {'form':form}
     return render(request, 'create-task.html', context)
 
+@login_required(login_url='/todolist/login/')
+def create_task_ajax(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        user = request.user
+        date = datetime.datetime.now()
+        is_finished = False
+        item = Task(title=title, description=description, user=user, date=date, is_finished=is_finished)
+        item.save()
+        return JsonResponse({"Message": "Task Berhasil Dibuat"},status=200)
+
 def login_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -88,6 +103,7 @@ def toggle_is_finished(request, id):
     task.save(update_fields = ['is_finished'])
     return HttpResponseRedirect(reverse("todolist:show_todolist"))
 
+@csrf_exempt
 def delete_task (request, id):
     task = Task.objects.get(user=request.user, id=id)
     task.delete()
