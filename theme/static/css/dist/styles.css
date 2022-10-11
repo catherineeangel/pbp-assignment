@@ -958,6 +958,14 @@ select {
   width: 5rem;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
+.w-44 {
+  width: 11rem;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -1115,6 +1123,11 @@ select {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+.bg-slate-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-30 {
