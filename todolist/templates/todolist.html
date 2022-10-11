@@ -182,14 +182,15 @@
                   <p>
                       Status: <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg"> ${is_finished_text}</span>
                   </p>  
+                  <a href="toggle-is-finished/${task.pk}">
                   <input 
                   class="accent-emerald-500/25"
                   type="checkbox" 
                   name="checkbox"      
                   id='${task.pk}' 
                   ${task.fields.is_finished ?  checked:''} 
-                  onchange="location.href='toggle-is-finished/${i.pk}'"
                   />
+                </a>
 
                 </div>  
                 </div class="flex justify-end pt-5 cursor-pointer">
