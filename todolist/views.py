@@ -108,3 +108,9 @@ def delete_task (request, id):
     task = Task.objects.get(user=request.user, id=id)
     task.delete()
     return HttpResponseRedirect(reverse("todolist:show_todolist"))
+
+@csrf_exempt
+def delete_task_ajax (request, id):
+    task = Task.objects.get(user=request.user, id=id)
+    task.delete()
+    return JsonResponse({"Message": "Task Berhasil Dihapus"},status=200)

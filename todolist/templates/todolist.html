@@ -188,11 +188,12 @@
                   name="checkbox"      
                   id='${task.pk}' 
                   ${task.fields.is_finished ?  checked:''} 
+                  onchange="location.href='toggle-is-finished/${i.pk}'"
                   />
 
                 </div>  
-                </div>
-                   <a onclick="delele_todolist(${task.pk})" class="flex justify-end pt-5 cursor-pointer" id="delete-icon"><i style="font-size:24px;color:whitesmoke" class="fa">&#xf014;</i></a>
+                </div class="flex justify-end pt-5 cursor-pointer">
+                   <a onclick="delele_todolist(${task.pk})"  id="delete-icon"><i style="font-size:24px;color:whitesmoke" class="fa">&#xf014;</i></a>
                 </div>
               </div>`
                   
@@ -205,11 +206,15 @@
         }
     })}
 
+    function toggle_finish(id){
+
+    }
+
     function delele_todolist(id){
     $.ajax({
       type :"DELETE",
       csrfmiddlewaretoken: "{{ csrf_token }}",
-      url :`/todolist/delete/${id}`,
+      url :`/todolist/delete-ajax/${id}`,
       success: function () {
         $(`#${id}`).remove()
       },
