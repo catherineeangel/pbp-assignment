@@ -134,8 +134,8 @@
  <script>
      const modal_overlay = document.querySelector('#modal_overlay');
   const modal = document.querySelector('#modal');
-  const nama = document.getElementById('nama');
-  const desc = document.getElementById('desc');
+  const title = document.getElementById('title');
+  const description = document.getElementById('description');
 
   
   function openModal (value){
@@ -147,8 +147,8 @@
         modalClass.remove('opacity-0')
         modalClass.remove('-translate-y-full')
         modalClass.remove('scale-150')
-        nama.value = '';
-        desc.value = '';
+        title.value = '';
+        description.value = '';
       }, 100);
     } else {
       modalClass.add('-translate-y-full')
@@ -171,7 +171,6 @@
         dataType: "json",
         success: function(data){
           for (let task of data){
-            console.log(task.pk)
             let is_finished_style = task.fields.is_finished ? "shadow-slate-500/50 bg-gradient-to-br from-slate-700 to-slate-900 opacity-70 ": "shadow-pink-500/50 hover:scale-105 bg-gradient-to-br from-purple-500 to-pink-500";
             let is_finished_text = task.fields.is_finished ? "Closed":"Open";
             temp += ` <div id="${task.pk}" class="w-[320px] shadow-lg transition-all flex flex-col justify-between p-10 text-black rounded-3xl ${is_finished_style}">
