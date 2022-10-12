@@ -921,6 +921,11 @@ select {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-y-full {
+  --tw-translate-y: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .scale-150 {
   --tw-scale-x: 1.5;
   --tw-scale-y: 1.5;
@@ -1027,6 +1032,11 @@ select {
 .bg-\[\#8d61a5\] {
   --tw-bg-opacity: 1;
   background-color: rgb(141 97 165 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#efe9fa\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 233 250 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-40 {
