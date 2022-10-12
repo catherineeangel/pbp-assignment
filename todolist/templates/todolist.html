@@ -62,7 +62,7 @@
             {% endif %}   
             
 
-              <div class="flex flex-col md:flex-row gap-y-8 md:gap-x-6 justify-center md:w-[400px] mx-auto">
+              <div class="flex flex-col md:flex-row gap-y-8 md:gap-x-6 justify-center md:w-[400px] mx-aut my-5">
                 <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold w-full">
                   Create Task
                 </button>
@@ -72,13 +72,7 @@
             <!-- overlay -->
             <div id="modal_overlay" class="hidden absolute inset-0 bg-blur-lg bg-slate-700/50 h-full w-screen flex justify-center items-center pt-10 md:pt-0">
               <!-- modal -->
-              <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-[300px] bg-[#efe9fa] shadow-lg rounded-3xl w-[400px] rounded shadow-lg transition-opacity transition-transform duration-300">
-                <!-- button close -->
-                <span 
-                onclick="openModal(false)"
-                  class="absolute top-0 right-0 text-2xl w-10 h-10 text-black">
-                    X
-              </span>
+              <div id="modal" class="opacity-0 transform -translate-y-full scale-150 relative h-[300px] bg-[#efe9fa] shadow-lg rounded-3xl w-[400px] shadow-lg transition-opacity transition-transform duration-300">
                 <!-- body -->
             
                     
@@ -87,7 +81,7 @@
                         <div class="bg-[#efe9fa] bg-opacity-40  rounded-3xl w-fit p-8 "> 
                           <span 
                           onclick="openModal(false)"
-                            class="absolute top-0 right-0 text-2xl w-10 h-10 text-black">
+                            class="absolute top-3 right-0 text-2xl cursor-pointer w-10 h-10 text-black">
                               X
                         </span> 
                           <h1 class="font-bold text-violet-900 text-2xl text-center">Create Todo List</h1>
@@ -234,7 +228,7 @@
       dataType: "json",
       success: function () {
         openModal(false)
-        loadData();
+        getTodolist();
       },
     });
   });
