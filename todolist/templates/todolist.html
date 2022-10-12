@@ -172,7 +172,7 @@
                   <p>
                       Status: <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg"> ${is_finished_text}</span>
                   </p>  
-                  <a >
+
                   <input 
                   class="accent-emerald-500/25"
                   type="checkbox" 
@@ -181,7 +181,7 @@
                   ${task.fields.is_finished ?  'checked':''} 
                   onchange="toggle_finish(${task.pk})"
                   />
-                </a>
+
 
                 </div>  
                 <div class="flex justify-end pt-5 cursor-pointer">
