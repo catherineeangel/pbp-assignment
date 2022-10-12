@@ -101,7 +101,7 @@ def toggle_is_finished(request, id):
     task = Task.objects.get(user=request.user, id=id)
     task.is_finished = not(task.is_finished)
     task.save(update_fields = ['is_finished'])
-    return JsonResponse({"Message": "Task Berhasil Diupdate"},status=301)
+    return JsonResponse({"Message": "Task Berhasil Diupdate"},status=200)
     # return HttpResponseRedirect(reverse("todolist:show_todolist"))
 
 @csrf_exempt

@@ -798,16 +798,12 @@ select {
   left: 0px;
 }
 
-.top-0 {
-  top: 0px;
+.top-3 {
+  top: 0.75rem;
 }
 
 .right-0 {
   right: 0px;
-}
-
-.top-3 {
-  top: 0.75rem;
 }
 
 .z-10 {
@@ -906,14 +902,14 @@ select {
   width: 400px;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .border-collapse {
@@ -922,11 +918,6 @@ select {
 
 .-translate-y-full {
   --tw-translate-y: -100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-full {
-  --tw-translate-y: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1001,10 +992,6 @@ select {
   border-radius: 1.5rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
 .border {
   border-width: 1px;
 }
@@ -1031,11 +1018,6 @@ select {
 
 .bg-slate-700\/50 {
   background-color: rgb(51 65 85 / 0.5);
-}
-
-.bg-\[\#8d61a5\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(141 97 165 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#efe9fa\] {
@@ -1252,15 +1234,6 @@ select {
 
   .md\:justify-center {
     justify-content: center;
-  }
-
-  .md\:gap-x-10 {
-    -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
-  }
-
-  .md\:gap-y-0 {
-    row-gap: 0px;
   }
 
   .md\:gap-x-6 {
