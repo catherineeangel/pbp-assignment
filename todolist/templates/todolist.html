@@ -62,7 +62,7 @@
             {% endif %}   
             
 
-              <div class="flex flex-col md:flex-row gap-y-8 md:gap-x-6 justify-center md:w-[400px] mx-aut my-5">
+              <div class="flex flex-col md:flex-row gap-y-8 md:gap-x-6 justify-center md:w-[400px] mx-auto my-5">
                 <button onclick="openModal(true)" class="primary-button bg-[#8f66dd] text-white font-bold w-full">
                   Create Task
                 </button>
@@ -175,13 +175,14 @@
                   <p>
                       Status: <span class="font-bold text-emerald-400  shadow-white drop-shadow-lg"> ${is_finished_text}</span>
                   </p>  
-                  <a href="toggle-is-finished/${task.pk}">
+                  <a >
                   <input 
                   class="accent-emerald-500/25"
                   type="checkbox" 
                   name="checkbox"      
                   id='${task.pk}' 
-                  ${task.fields.is_finished ?  checked:''} 
+                  ${task.fields.is_finished ?  'checked':''} 
+                  onchange="toggle_finish(${task.pk})"
                   />
                 </a>
 
@@ -201,7 +202,14 @@
     })}
 
     function toggle_finish(id){
-
+      $.ajax({
+      type :"UPDATE",
+      csrfmiddlewaretoken: "{{ csrf_token }}",
+      url :`/todolist/toggle-is-finished/${id}`,
+      success: function () {
+        getTodolist();
+      },
+    })
     }
 
     function delele_todolist(id){
