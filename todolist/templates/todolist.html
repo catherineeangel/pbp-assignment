@@ -12,9 +12,6 @@
 
 
       <div id="container-cards" class="flex flex-wrap gap-6 text-xl my-5 justify-center">
-        <div id="task-card">
-
-        </div>
 <!-- 
           {% for task in todolist  %}
               {% if task.is_finished %}
@@ -208,6 +205,8 @@
       url :`/todolist/toggle-is-finished/${id}`,
       success: function () {
         getTodolist();
+        setInterval('location.reload()', 500);
+        // $('#container-cards').load('#container-cards > *');
       },
     })
     }
